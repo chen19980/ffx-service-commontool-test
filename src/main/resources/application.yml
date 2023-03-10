@@ -1,0 +1,4 @@
+spring:
+  ## 切換環境參數動作由maven profile控制（預設dev）
+  profiles:
+    active: '@spring.profiles.active@'

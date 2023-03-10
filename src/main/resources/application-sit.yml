@@ -1,0 +1,85 @@
+## 第三方套件的參數
+############################
+server:
+  port: 8080
+  shutdown: graceful
+  error:
+    whitelabel:
+      enabled: false
+
+  compression:
+    enabled: true
+    min-response-size: 256
+    mime-types: text/html,text/xml,text/plain,application/json,application/xml,text/css,application/javascript,image/svg+xml
+
+spring:
+  transaction:
+    timeout: 36000
+  application:
+    name: ffx-service-commontool
+  lifecycle:
+    timeout-per-shutdown-phase: 60s
+
+  ## enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    main:
+      jdbcUrl: jdbc:oracle:thin:@10.20.152.41:1523/CORREMIT
+      username: firse
+      password: firse123
+      minimum-idle: 2
+      maximum-pool-size: 5
+      idle-timeout: 30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1 FROM DUAL
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        # for lazy load no session exception
+        enable_lazy_load_no_trans: true
+        jdbc:
+          batch_size: 2
+    hibernate:
+      generate-ddl: false
+      ## none, validate, update, create, create-drop
+      ddl-auto: none
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      write-date-timestamps-as-nanoseconds: false
+      fail-on-empty-beans: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /static
+  resources:
+    add-mappings: false
+
+logging:
+  config: classpath:logback-elk.xml
+############################
+
+## Framework定義的參數
+############################
+fcb-framework:
+  service:
+    length:
+      system-type: 3
+      service-name: 2
+      error-type: 1
+      error-code: 4
+    information:
+      system-type: FFX
+      service-name: TS
+
+############################
+
+## 服務自定義的參數
+############################
+ffx-service-commontool:
+
+serial-number:
+  optimistic-lock-retry-limit: 10
+############################

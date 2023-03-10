@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 引用 Spring Boot 對 Logback 的預設配置 -->
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <springProperty scope="context" name="env" source="spring.profiles.active"
+                    defaultValue="default"/>
+
+    <property name="CHARSET" value="UTF-8"/>
+    <property name="PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %X{x-core-traceid} %-5level %logger{35} - %msg %n"/>
+
+    <!-- 設定印出 filebeat 時的相關設定 -->
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>filebeat.kube-system:9000</destination>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp>
+                    <fieldName>timestamp</fieldName>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <loggerName>
+                    <fieldName>logger</fieldName>
+                </loggerName>
+                <logLevel>
+                    <fieldName>level</fieldName>
+                </logLevel>
+                <threadName>
+                    <fieldName>thread</fieldName>
+                </threadName>
+                <nestedField>
+                    <fieldName>mdc</fieldName>
+                    <providers>
+                        <mdc/>
+                    </providers>
+                </nestedField>
+                <stackTrace>
+                    <fieldName>stackTrace</fieldName>
+                    <!-- maxLength - limit the length of the stack trace -->
+                    <throwableConverter
+                            class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                        <maxDepthPerThrowable>200</maxDepthPerThrowable>
+                        <maxLength>14000</maxLength>
+                        <rootCauseFirst>true</rootCauseFirst>
+                    </throwableConverter>
+                </stackTrace>
+                <message/>
+                <throwableClassName>
+                    <fieldName>exceptionClass</fieldName>
+                </throwableClassName>
+            </providers>
+        </encoder>
+
+    </appender>
+
+    <!-- (預設) 設定 ROOT Logger 印出等級及輸出 -->
+    <root level="INFO">
+        <appender-ref ref="LOGSTASH"/>
+    </root>
+
+    <!-- (預設) 設定 tw.com.firstbank Logger 印出等級及輸出-->
+    <logger name="tw.com.firstbank.fcbcore.fcbframework" level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.adapter.in.rest.impl.BaseController"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.adapter.in.rest.RestHeaderInterceptor"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.adapter.in.rest.RestChannelHeaderInterceptor"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.rabbitmq.adapter.out.event.EventPublisher"
+            level="INFO"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.rabbitmq.adapter.out.event.RabbitMQEventBusAdapter"
+            level="INFO"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.spring.config.AopApLogConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.spring.config.AopInboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.rabbitmq.spring.config.AopInboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.jms.spring.config.AopInboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.spring.config.AopOutboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.rabbitmq.spring.config.AopOutboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.adapters.jms.spring.config.AopOutboundConfig"
+            level="DEBUG"/>
+    <logger name="tw.com.firstbank.fcbcore.fcbframework.core.spring.config.SensitiveData"
+            level="INFO"/>
+
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.orm" level="INFO"/>
+    <logger name="org.springframework.http.client" level="DEBUG"/>
+    <logger name="org.springframework.web.client.RestTemplate" level="DEBUG"/>
+
+    <!-- 透過不同啟動環境來設定 (依照 pom.xml 的 <activatedProperties> 變數決定) -->
+    <!-- dev/sit/uat/prod 環境 ROOT Logger 印出等級及輸出 -->
+    <springProfile name="dev">
+        <logger name="tw.com.firstbank.fcbcore" level="DEBUG"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    </springProfile>
+    <springProfile name="sit">
+        <logger name="tw.com.firstbank.fcbcore" level="DEBUG"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    </springProfile>
+    <springProfile name="uat">
+        <logger name="tw.com.firstbank.fcbcore" level="DEBUG"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="tw.com.firstbank.fcbcore" level="INFO"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    </springProfile>
+    <springProfile name="systexdev">
+        <logger name="tw.com.firstbank.fcbcore" level="DEBUG"/>
+        <logger name="org.hibernate.SQL" level="INFO"/>
+        <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    </springProfile>
+
+</configuration>

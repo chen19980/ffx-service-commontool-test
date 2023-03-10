@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 引用 Spring Boot 對 Logback 的預設配置 -->
+
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <springProperty scope="context" name="env" source="spring.profiles.active"
+                    defaultValue="default"/>
+
+    <property name="CHARSET" value="UTF-8"/>
+    <property name="PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %X{x-core-traceid} %-5level %logger{35} - %msg %n"/>
+
+     設定印出 console 時的相關設定
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+     (預設) 設定 ROOT Logger 印出等級及輸出
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+------------------------------------------------------------------------------------------
+<!--    <appender name="DRF" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <File>logs/app.log</File>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash;日誌文件輸出的文件名&ndash;&gt;-->
+<!--            <FileNamePattern>logs/app.%d{yyyy-MM-dd}.log</FileNamePattern>-->
+<!--            &lt;!&ndash;日誌文件保留天數&ndash;&gt;-->
+<!--            <maxHistory>7</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <Pattern>${PATTERN}</Pattern>-->
+<!--            <charset>${CHARSET}</charset>-->
+<!--        </encoder>-->
+
+<!--        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">-->
+<!--            <MaxFileSize>300MB</MaxFileSize>-->
+<!--        </triggeringPolicy>-->
+<!--    </appender>-->
+
+<!--    <root level="ERROR">-->
+<!--        <appender-ref ref="DRF"/>-->
+<!--    </root>-->
+
+    <!-- (預設) 設定 tw.com.firstbank Logger 印出等級及輸出-->
+    <logger name="tw.com.firstbank" level="DEBUG"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.orm" level="INFO"/>
+    <logger name="org.springframework.http.client" level="DEBUG"/>
+    <logger name="org.springframework.web.client.RestTemplate" level="DEBUG"/>
+
+</configuration>
+
+
+
+
+
+
+

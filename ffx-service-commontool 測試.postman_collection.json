@@ -1,0 +1,2551 @@
+{
+	"info": {
+		"_postman_id": "10c9c4c1-c4bd-4035-be39-225b2d9da933",
+		"name": "ffx-service-commontool 測試",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21698439"
+	},
+	"item": [
+		{
+			"name": "getSerialNo",
+			"item": [
+				{
+					"name": "getSerialNo A-1 正確：新寫入 / 既有資料 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FSW\",\r\n        \"serialId\": \"InMessage2022\",\r\n        \"beginNo\": \"0000001\",\r\n        \"endNo\": \"9999999\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-1 正確：新寫入 / 既有資料 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage.normal.2022\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-1 正確：新寫入 / 既有資料 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage.normal.2022\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-2 錯誤：ID 存在但 begin_no 與既有資料不符 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": \"2\",\r\n        \"endNo\": \"6999999\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-2 錯誤：ID 存在但 begin_no 與既有資料不符 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": \"2\",\r\n        \"endNo\": \"6999999\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-2 錯誤：ID 存在但 begin_no 與既有資料不符 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": \"2\",\r\n        \"endNo\": \"6999999\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-3 錯誤：ID 存在但 end_no 與既有資料不符 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999998\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-3 錯誤：ID 存在但 end_no 與既有資料不符 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999998\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo A-3 錯誤：ID 存在但 end_no 與既有資料不符 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"FIR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999998\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo B 錯誤：begin_no 等於 0 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 0,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo B 錯誤：begin_no 等於 0 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 0,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo B 錯誤：begin_no 等於 0 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 0,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo C 錯誤：begin_no 小於 0 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": -1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo C 錯誤：begin_no 小於 0 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": -1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo C 錯誤：begin_no 小於 0 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": -1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo D 錯誤：begin_no 等於 end_no local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 100,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo D 錯誤：begin_no 等於 end_no k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 100,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo D 錯誤：begin_no 等於 end_no dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 100,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo E 錯誤：begin_no 大於 end_no local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 101,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo E 錯誤：begin_no 大於 end_no k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 101,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo E 錯誤：begin_no 大於 end_no dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessage1997\",\r\n        \"beginNo\": 101,\r\n        \"endNo\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo F-1-3 錯誤：序號已經用盡（第一、二次成功，第三次用盡）local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessageEndIsNigh\",\r\n        \"beginNo\": 6999998,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo F-1-3 錯誤：序號已經用盡（第一、二次成功，第三次用盡） k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessageEndIsNigh\",\r\n        \"beginNo\": 6999998,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo F-1-3 錯誤：序號已經用盡（第一、二次成功，第三次用盡） dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"PaymentMessageEndIsNigh\",\r\n        \"beginNo\": 6999998,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-1 錯誤：systemType_type 長度過長 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IRRRR\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-1 錯誤：systemType_type 長度過長 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IRRRR\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-1 錯誤：systemType_type 長度過長 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IRRRR\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-2 錯誤：systemType 為空白 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-2 錯誤：systemType_type 為空白 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo G-2 錯誤：systemType_type 為空白 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"\",\r\n        \"serialId\": \"PaymentMessage2000\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo H-1 錯誤：serial_id 過長 local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"123456789012345678901234567890123456789012345678901\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://core.firstbank.com.tw:8080/na/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"core",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"port": "8080",
+							"path": [
+								"na",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo H-1 錯誤：serial_id 過長 k8s",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"123456789012345678901234567890123456789012345678901\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://10.109.190.16:8000/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"109",
+								"190",
+								"16"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSerialNo H-1 錯誤：serial_id 過長 dev",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-core-channel",
+								"value": "channel",
+								"type": "text"
+							},
+							{
+								"key": "x-core-uid",
+								"value": "uid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-txid",
+								"value": "txid",
+								"type": "text"
+							},
+							{
+								"key": "x-core-process-mode",
+								"value": "C",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "zh-tw",
+								"type": "text"
+							},
+							{
+								"key": "x-core-timestamp",
+								"value": "2022-01-01T00:00:000000",
+								"type": "text"
+							},
+							{
+								"key": "x-core-traceid",
+								"value": "traceid",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\": \"sourceId\",\r\n    \"branchId\": \"093\",\r\n    \"txId\": \"S021\",\r\n    \"prefix\": \"A\",\r\n    \"branchNo\": \"093\",\r\n    \"transactionSeqNo\": \"transactionSeqNo\",\r\n    \"terminalId\": \"AA1S\",\r\n    \"tellerId\": \"tellerId\",\r\n    \"transactionCode\": \"S031\",\r\n    \"businessDate\": \"20220101\",\r\n    \"changeDateFlag\": \"0\",\r\n    \"trmId\": \"AA1S\",\r\n    \"ipAddr\": \"127.0.0.1\",\r\n    \"opId\": \"AA01\",\r\n    \"empId\": \"660971\",\r\n    \"auxOpId\": \"AA01\",\r\n    \"auxEmpId\": \"660971\",\r\n    \"transactionId\": \"transactionId\",\r\n    \"clientIp\": \"127.0.0.1\",\r\n    \"authEmpId\":\"234567\",\r\n    \"mediaOccur\":\"0\",\r\n    \"mediaTranStatus\":\"test\",\r\n    \"txSeqNo\":\"txSeqNo\",\r\n    \"requestTimeStamp\": \"2022-01-01T00:00:000000\",\r\n    \"transactionDateTime\": \"2022-11-18\",\r\n    \"clientRequest\": {\r\n        \"systemType\": \"IR\",\r\n        \"serialId\": \"123456789012345678901234567890123456789012345678901\",\r\n        \"beginNo\": 1,\r\n        \"endNo\": 6999999\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.core-dev.firstbank.com.tw/api/ffx/ts/ffxtsserialnumber/get/v1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"core-dev",
+								"firstbank",
+								"com",
+								"tw"
+							],
+							"path": [
+								"api",
+								"ffx",
+								"ts",
+								"ffxtsserialnumber",
+								"get",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
